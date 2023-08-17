@@ -170,7 +170,19 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   if (num <= 1) {
+      return false;
+    }
+    
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    
+    return true;
 }
+      
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
