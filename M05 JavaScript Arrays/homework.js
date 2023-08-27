@@ -23,9 +23,11 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   for (var i = 0 ; i = array.length ; i++) {
-      return (array[i] + 1);
+   var mas1 = [];
+   for (var i = 0 ; i < array.length ; i++) {
+      mas1.push(array[i] + 1);
    }
+   return mas1;
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -118,12 +120,12 @@ function multiplicarArgumentos() {
    var mult = 1;
    var i = 0;
    do {
-      if (arguments.length = 0) {
-         mult = 0
-      } else if (arguments.length = 1) {
-         mult = arguments;
+      if (arguments.length === 0) {
+         mult = 0;
+      } else if (arguments.length === 1) {
+         mult = arguments[i];
       } else if (arguments.length > 1) {
-         mult = mult * arguments[i];
+         mult = (mult * arguments[i]);
       }
       i = i + 1
    } while (i < arguments.length);
@@ -191,18 +193,47 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var arreglo = [];
+   var i = 0;
+   do {
+      if (array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre") {
+         arreglo.push(array[i]);
+      }
+      i = i + 1;
+   } while (i < array.length);
+   if (!arreglo.includes("Enero") || !arreglo.includes("Marzo") || !arreglo.includes("Noviembre")) {
+      return ("No se encontraron los meses pedidos");
+   } else {
+      return arreglo;
+   }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var i = 0
+   var result = []
+   do {
+      result.push(6 * i);
+      i++
+   } while (i < 11);
+   return (result);
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var returnn = [];
+   var i = 0;
+   do {
+      if (array[i] > 100) {
+         returnn.push(array[i]);
+      }
+      i = i + 1;
+   } while (i < array.length);
+   return returnn;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -216,6 +247,20 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var rr = [];
+   var i = 0;
+   var crazy = num;
+   do {
+      if ((crazy + 2) === 2) {
+         rr = "Se interrumpió la ejecución"
+         break;
+      } else {
+         crazy = crazy + 2;
+         rr.push(crazy)
+         i++
+      }
+   } while (i < 10)
+   return rr
 }
 
 function continueStatement(num) {
@@ -225,6 +270,20 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var rr = [];
+   var i = 0;
+   var crazy = num;
+   do {
+      if (i === 5) {
+         i++
+         continue;
+      } else {
+         crazy = crazy + 2;
+         rr.push(crazy)
+         i++
+      }
+   } while (i < 10)
+   return rr
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
